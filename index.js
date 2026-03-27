@@ -6,19 +6,14 @@ const app = express();
 app.get("/", async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      headless: "new",
+      headless: true,
       args: [
         "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage",
-        "--disable-gpu",
-        "--no-zygote"
-      ],
-      executablePath: puppeteer.executablePath() // kluczowe dla Render
+        "--disable-setuid-sandbox"
+      ]
     });
 
     const page = await browser.newPage();
-
     await page.goto("https://www.olx.pl/uslugi/q-elektryk-dolny-slask/", {
       waitUntil: "networkidle2",
       timeout: 60000
