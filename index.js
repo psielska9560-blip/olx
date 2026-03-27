@@ -1,5 +1,3 @@
-// test
-
 import express from "express";
 import puppeteer from "puppeteer";
 
@@ -9,6 +7,7 @@ app.get("/", async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox"
