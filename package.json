@@ -9,5 +9,15 @@
   "dependencies": {
     "express": "^4.18.2",
     "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "puppeteer": {
+    "product": "chrome"
+  },
+  "env": {
+    "PUPPETEER_PRODUCT": "chrome",
+    "PUPPETEER_SKIP_DOWNLOAD": "false"
   }
 }
